@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    <h1>Article 作成</h1>
+
+    <form action="{{ path('articles_store') }}" method="post">
+        <div>
+            <label>
+                Title
+                <input type="text" name="title">
+            </label>
+        </div>
+        <div>
+            <label>
+                Body
+                <input type="text" name="body">
+            </label>
+        </div>
+        <button type="submit">create</button>
+    </form>
+{% endblock %}

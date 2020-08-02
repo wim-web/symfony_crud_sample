@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    <h1>Article 一覧</h1>
+
+    <a href="{{ path('articles_create') }}">作成画面</a>
+
+    {% if articles is empty %}
+        <div>Article はありません</div>
+    {% else %}
+        <div>
+            <ul>
+                {% for article in articles %}
+                    <li>
+                        <a href="{{ path('articles_show', {id: article.id}) }}">
+                            {{ article.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}
