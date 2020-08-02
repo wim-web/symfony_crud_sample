@@ -18,11 +18,12 @@
                 <input type="text" name="body" value="{{ article.body }}" disabled>
             </label>
         </div>
-        <button type="submit">edit</button>
+        <button class="waves-effect waves-light btn" type="submit">edit</button>
+        <button class="waves-effect waves-light btn" type="submit" form="delete">delete</button>
     </form>
 
-    <form action="{{ path('articles_delete', {id: article.id}) }}" method="post">
+    <form id="delete" action="{{ path('articles_delete', {id: article.id}) }}" method="post">
         <input type='hidden' name='_method' value='DELETE'>
-        <button type="submit">delete</button>
+
     </form>
 {% endblock %}
